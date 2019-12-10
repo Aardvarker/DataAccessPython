@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>St. Louis City Servies Data Access</title>
+    <link rel="StyleSheet" href="static/styles.css" type="text/css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <h1>St. Louis City Services Data Access</h1>
+    <div class="topnav">
+            <a class="active" href="home">Home</a>
+            <a href="join">Join</a>
+            <a href="logged_in">DataAccess</a>
+            <a href="About",style="float:right">About</a>
+          </div><br/> 
+</head>
+<body>
+
+<table class="block3">
+    <tr>
+        <td>
+                <p>Hi!  This is a prototype web app designed to provide access and<br/>
+                        insight into the many unapparent city services.  It provides direct<br/> 
+                        access to St. Louis City's internal database in order look up activity<br/>
+                        on your street in the last two weeks, or a search feature for all activity<br/>
+                        in the last 8 years.<br/>
+                        This has been created by Andrew Lutz in order to demonstrate both ability<br/>
+                        and interest in the feild of software development in order to assist in <br/>
+                        obtaining a position as a software developer.<br/>
+                        I hope you find it both interesting and entertaining.  To start, create an account<br/> 
+                        by clicking 'New User' and dive in !<br/>
+                </p> 
+        </td>
+        <td>
+                <form method="POST", class="form">
+                        Enter Login:<br>
+                        <input name="username" value={{username}}><br>
+                        <p class="error">{{username_error}}</p>
+                        Enter password:<br>
+                        <input type="password" id="password" name="pw"></p>
+                        <p class="error">{{pw_error}}</p>
+                        <input type="submit" value="Validate">
+                        <br>
+                        
+                        <br>
+                       <a href="{{url_for('join')}}">New User?</a>
+                       
+                    </form>
+        </td>
+    </tr>
+</table>
+<div>
+    
+</div>
+</body>
+</html>

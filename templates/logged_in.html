@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>St. Louis City Servies Data Access</title>
+    <h1>St. Louis City Services Data Access</h1>
+    <div class="topnav">
+            <a href="home">Home</a>
+            <a href="join">Join</a>
+            <a class="active"href="logged_in">DataAccess</a>
+            <a href="About",style="float:right">About</a>
+          </div><br/>
+    <link rel="StyleSheet" href="static/styles.css" type="text/css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $( function() {
+          $( "#datepicker" ).datepicker({ dateFormat: 'dd-mm-yy' });
+        } );
+        </script>
+         
+</head>
+<body>
+
+<h3>Welcome, {{username}}.</h3>
+<h4><p>Please note, due to limitations<br/>
+        of the city API, results may take<br/> 
+        up to a minute to appear.</p></h4>
+<table class="block3">
+    <tr>
+        <td>
+                <form method="POST", class="form">
+                        Enter street name: (eg: "Shaw")<br>
+                        <input name="text"><br>
+                        Enter date:<br>
+                        <input type="text" name="date_picked" id="datepicker"></p>
+                        <br/><br/><br/><br/><br/>
+                        <input type="submit">
+                        
+                    </form>
+        </td>
+        <td>
+            <tr>
+                {% if M_List!=null%}
+                <th><b>NO RESULTS</b></th>
+                {%endif%}
+            </tr>
+<table class="block2">
+        
+        {% for S in S_List %}
+            
+                <th><b>Service Name: </b></th>
+                <th><b>Description: </b></th>
+                <th><b>Expected Date:</b></th>
+                <th><b>Address:</b></th>
+            
+            
+            
+                <tr>    
+                <td>{{S.SERVICE_NAME}}</td>   
+                <td>{{S.DESCRIPTION}}</td>
+                <td>{{S.EXPECTED_DATETIME}}</td>
+                <td>{{S.ADDRESS}}</td>
+            
+            
+            
+            
+            </tr>   
+    
+        {%endfor%}
+       
+    </table>
+</tr>
+</table>    
+
+</body>
